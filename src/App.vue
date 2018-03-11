@@ -1,28 +1,33 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <Content/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import Content from './components/Content'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Content
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Work Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin-left: 12vw;
+  margin-top: 30vh;
+}
+body {
+  background-color: #ffefeb; 
+}
+mark {
+  background-color: #ffe7b0;
+  font-style: italic;
 }
 </style>
