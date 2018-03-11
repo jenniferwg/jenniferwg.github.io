@@ -35,7 +35,7 @@ export default {
         'beautiful products.',
         'Full-stack software engineer at <a href="https://affinity.co/">Affinity</a>, ' +
         'with a background in <mark>user-focused</mark> marketing and design.',
-        'East coast transplant engaging in the <mark>San Francisco</mark> community. '
+        'East coast transplant exploring the <mark>San Francisco</mark> community. '
       ],
       links: [
         { type: 'Github', url: 'https://github.com/jenniferwg' },
@@ -72,7 +72,11 @@ export default {
     max-width: $media-lg;
     margin-left: 8%;
     margin-right: 8%;
-    margin-top: 24vh;
+    margin-top: 31vh;
+
+    @media only screen and (max-width: $media-md) {
+      margin-top: 21vh;
+    }
   }
 
   .term {
