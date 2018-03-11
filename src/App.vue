@@ -22,19 +22,21 @@ export default {
     font-family: 'Work Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    margin-left: 12vw;
-    margin-top: 30vh;
+  }
+
+  html {
+    font-size: calc(8px + (20 - 8)*(100vw - 375px)/ (1920 - 375));
   }
 
   body {
-    background-size: 3rem 3rem;
+    background-size: 3.2rem 3.2rem;
     background-image: linear-gradient(to right, $pink 1px, transparent 1px), linear-gradient(to bottom, $pink 1px, transparent 1px);
   }
 
   mark {
     background-color: $yellow;
     font-style: italic;
-    padding-right: 0.8rem;
+    padding-right: 0.6rem;
   }
 
   a {

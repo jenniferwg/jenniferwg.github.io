@@ -1,7 +1,13 @@
 <template>
   <div class="content">
-    <div class="term">{{ term }}</div>
-    <div class="term-tag">{{ tag }}</div>
+  <transition name="slide-in" appear>
+    <div>
+      <div class="term">{{ term }}</div>
+      <div class="term-tag">{{ tag }}</div>
+    </div>
+  </transition>
+  <transition name="fade-in" appear>
+    <div>
     <ol class="definitions">
       <li v-for="(def, index) in definitions" :key="index">
         <div v-html="def"></div>
@@ -13,6 +19,8 @@
       </li>
     </ul>
   </div>
+  </transition>
+  </div>
 </template>
 
 <script>
@@ -23,14 +31,16 @@ export default {
       term: 'Jennifer Wang',
       tag: '/ JE-ni-fer WANG / n.',
       definitions: [
-        'A human passionate about <mark>connecting</mark> fellow humans through beautiful products.',
-        'Full-stack software engineer at <a href="https://affinity.co/">Affinity</a>, with a background in <mark>user-focused</mark> marketing and design.',
-        'East coast transplant newly based in <mark>San Francisco</mark> - exploring, learning and getting involved.'
+        'A human passionate about <mark>connecting</mark> fellow humans through ' +
+        'beautiful products.',
+        'Full-stack software engineer at <a href="https://affinity.co/">Affinity</a>, ' +
+        'with a background in <mark>user-focused</mark> marketing and design.',
+        'East coast transplant engaging in the <mark>San Francisco</mark> community. '
       ],
       links: [
-        { type: "Github", url: "https://github.com/jenniferwg"},
-        { type: "LinkedIn", url: "https://www.linkedin.com/in/jenniferwg"},
-        { type: "Contact", url: "mailto:jennifer@affinity.co" }
+        { type: 'Github', url: 'https://github.com/jenniferwg' },
+        { type: 'LinkedIn', url: 'https://www.linkedin.com/in/jenniferwg' },
+        { type: 'Contact', url: 'mailto:jennifer@affinity.co' }
       ]
     }
   }
@@ -41,6 +51,30 @@ export default {
 <style scoped lang="scss">
   @import '../assets/styles/_variables';
 
+  .slide-in-enter-active {
+    transition: all 1.2s cubic-bezier(0.3, 0.65, 0.7, 0.95);
+  }
+
+  .slide-in-enter {
+    transform: translateX(-1rem);
+    opacity: 0;
+  }
+
+  .fade-in-enter-active {
+    transition: opacity 2s;
+  }
+
+  .fade-in-enter {
+    opacity: 0;
+  }
+
+  .content {
+    max-width: $media-lg;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-top: 24vh;
+  }
+
   .term {
     font-weight: 600;
     font-size: 3.2rem;
@@ -48,18 +82,19 @@ export default {
 
   .term-tag {
     font-weight: normal;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     margin-bottom: 1.6rem;
   }
 
   .definitions {
-    margin-top: 0.8rem;
-    margin-bottom: 6.5rem;
     font-family: 'Lato', sans-serif;
-    font-weight: 100;
-    line-height: 2rem;
+    line-height: 2.2rem;
     font-size: 1.4rem;
-    max-width: 65vw;
+    padding-left: 3rem;
+
+    @media only screen and (max-width: $media-md) {
+      font-size: 1.6rem;
+    }
   }
 
   .definitions > li {
@@ -69,10 +104,15 @@ export default {
 
   .links {
     position: absolute;
-    bottom: 6.4rem;
+    bottom: 10vh;
     list-style-type: none;
     padding: 0;
     font-size: 1.2rem;
+
+    @media only screen and (max-width: $media-md) {
+      bottom: 30vh;
+      font-size: 1.4rem;
+    }
   }
 
   .links > li {
