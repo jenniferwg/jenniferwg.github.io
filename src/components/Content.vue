@@ -1,22 +1,37 @@
 <template>
-  <div class="hello">
-    <h1>{{ title }}</h1>
-    <h2 v-html="description"></h2>
-    <ul>
-      <li>Github</li>
-      <li>Linkedin</li>
-      <li>Contact</li>
+  <div class="content">
+    <div class="term">{{ term }}</div>
+    <div class="term-tag">{{ tag }}</div>
+    <ol class="definitions">
+      <li v-for="(def, index) in definitions" :key="index">
+        <div v-html="def"></div>
+      </li>
+    </ol>
+    <ul class="links">
+      <li v-for="link in links" :key="link.type">
+        <a :href="link.url">{{ link.type }}</a>
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Content',
   data () {
     return {
-      title: 'Hi, I\'m Jennifer Wang.',
-      description: 'Lorem ipsum dolor sit amet, <mark>consectetur</mark> adipiscing elit. Sed sit amet elementum nisl, eget finibus nulla. Sed egestas libero a est viverra, <mark>quis laoreet erat</mark> lacinia. Aliquam in magna pulvinar, fringilla lectus et, dapibus orci.',
+      term: 'Jennifer Wang',
+      tag: '/ JE-ni-fer WANG / n.',
+      definitions: [
+        'A human passionate about <mark>connecting</mark> fellow humans through beautiful products.',
+        'Full-stack software engineer at <a href="https://affinity.co/">Affinity</a>, with a background in <mark>user-focused</mark> marketing and design.',
+        'East coast transplant newly based in <mark>San Francisco</mark> - exploring, learning and getting involved.'
+      ],
+      links: [
+        { type: "Github", url: "https://github.com/jenniferwg"},
+        { type: "LinkedIn", url: "https://www.linkedin.com/in/jenniferwg"},
+        { type: "Contact", url: "mailto:jennifer@affinity.co" }
+      ]
     }
   }
 }
@@ -26,51 +41,43 @@ export default {
 <style scoped lang="scss">
   @import '../assets/styles/_variables';
 
-  h1 {
-    font-weight: normal;
+  .term {
+    font-weight: 600;
     font-size: 3.2rem;
   }
 
-  h2 {
+  .term-tag {
+    font-weight: normal;
+    font-size: 1.8rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .definitions {
+    margin-top: 0.8rem;
+    margin-bottom: 6.5rem;
     font-family: 'Lato', sans-serif;
     font-weight: 100;
-    line-height: 2.2rem;
-    font-size: 1.5rem;
-    max-width: 60vw;
+    line-height: 2rem;
+    font-size: 1.4rem;
+    max-width: 65vw;
   }
 
-  ul {
+  .definitions > li {
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .links {
     position: absolute;
-    bottom: 12vh;
+    bottom: 6.4rem;
     list-style-type: none;
     padding: 0;
+    font-size: 1.2rem;
   }
 
-  li {
+  .links > li {
     display: inline-block;
     margin-right: 6vw;
-    cursor: crosshair;
     position: relative;
-  }
-
-  li:after {
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    width: 0;
-    height: 10px;
-    background-color: $dark-blue;
-    content: "";
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-    height:2px;
-  }
-
-  li:hover:after {
-    width: 100%;
-    height:2px;
   }
 </style>
