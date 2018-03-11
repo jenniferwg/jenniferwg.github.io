@@ -75,13 +75,17 @@ export default {
     margin-top: 31vh;
 
     @media only screen and (max-width: $media-md) {
-      margin-top: 21vh;
+      margin-top: 16vh;
     }
   }
 
   .term {
     font-weight: 600;
     font-size: 3.2rem;
+
+    @media only screen and (max-width: $media-md) {
+      font-size: 4.2rem;
+    }
   }
 
   .term-tag {
@@ -97,7 +101,8 @@ export default {
     padding-left: 3rem;
 
     @media only screen and (max-width: $media-md) {
-      font-size: 1.6rem;
+      line-height: 2.8rem;
+      font-size: 2rem;
     }
   }
 
@@ -114,14 +119,14 @@ export default {
     font-size: 1.2rem;
 
     @media only screen and (max-width: $media-md) {
-      bottom: 30vh;
-      font-size: 1.4rem;
+      bottom: 11vh;
+      font-size: 2rem;
     }
   }
 
   .links > li {
     display: inline-block;
-    margin-right: 6vw;
+    margin-right: 5rem;
     position: relative;
   }
 </style>
