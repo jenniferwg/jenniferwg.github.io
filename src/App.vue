@@ -15,19 +15,23 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Work Sans', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin-left: 12vw;
-  margin-top: 30vh;
-}
-body {
-  background-color: #ffefeb; 
-}
-mark {
-  background-color: #ffe7b0;
-  font-style: italic;
-}
+<style lang="scss">
+  @import './assets/styles/_variables';
+
+  #app {
+    font-family: 'Work Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-left: 12vw;
+    margin-top: 30vh;
+  }
+
+  body {
+    background-color: $pink; 
+  }
+
+  mark {
+    background-color: $yellow;
+    font-style: italic;
+  }
 </style>
