@@ -35,7 +35,7 @@ export default {
         'beautiful products.',
         'Full-stack software engineer at <a href="https://affinity.co/">Affinity</a>, ' +
         'with a background in <mark>user-focused</mark> marketing and design.',
-        'East coast transplant exploring the <mark>San Francisco</mark> community. '
+        'East coast transplant currently exploring <mark>San Francisco</mark>. '
       ],
       links: [
         { type: 'Github', url: 'https://github.com/jenniferwg' },
@@ -56,7 +56,7 @@ export default {
   }
 
   .slide-in-enter {
-    transform: translateX(-1rem);
+    transform: translateX(-0.2rem);
     opacity: 0;
   }
 
